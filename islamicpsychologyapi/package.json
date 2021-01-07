@@ -1,0 +1,36 @@
+{
+  "name": "islamicpsychologyapi",
+  "version": "1.0.0",
+  "description": "islamicpsychologyapi",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server",
+    "server": "nodemon server",
+    "islamicpsychology": "npm start --prefix islamicpsychology",
+    "dev": "concurrently \"npm run server\" \"npm run islamicpsychology\""
+  },
+  "author": "Mohammad Al Masalma",
+  "license": "MIT",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.30",
+    "bcrypt": "^4.0.1",
+    "config": "^3.3.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.2.0",
+    "express-validator": "^6.6.1",
+    "gravatar": "^1.8.1",
+    "i": "^0.3.6",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.5",
+    "react-fa-icon": "^0.1.4",
+    "react-sticky-footer": "0.1.0-rc3",
+    "reactstrap": "^8.7.0",
+    "request": "^2.88.2",
+    "uuid": "^8.3.0"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.4"
+  }
+}
