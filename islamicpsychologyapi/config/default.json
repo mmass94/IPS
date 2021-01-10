@@ -1,9 +1,0 @@
-{
-  "mongoURI": "mongodb+srv://mmass:mmm123@islamicpsychology-eyevq.mongodb.net/islamicpsychology?retryWrites=true&w=majority",
-
-  "jwtSecret": "mysecret"
-}
-
-
-
-
