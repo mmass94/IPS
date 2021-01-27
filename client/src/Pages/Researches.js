@@ -20,7 +20,7 @@ function Researches(props) {
   useEffect(() => {
     const fetchPosts = async () => {
       setLoading(true);
-      const res = await axios.get("http://localhost:5000/api/researches");
+      const res = await axios.get("http://ips.syriantf.com/api/researches");
       setposts(res.data);
       setLoading(false);
     };

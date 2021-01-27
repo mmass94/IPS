@@ -25,7 +25,10 @@ const UpdateQuestion = (props) => {
     setAnswer("");
 
     axios
-      .put(`http://localhost:5000/api/questions/${props.match.params.id}`, questions)
+      .put(
+        `http://ips.syriantf.com/api/questions/${props.match.params.id}`,
+        questions
+      )
       .then((res) => props.setAlert("question has been updated", "success"))
       .catch((err) => {
         props.setAlert("question has not been updated", "danger");
@@ -33,11 +36,8 @@ const UpdateQuestion = (props) => {
   };
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/questions/${props.match.params.id}`)
-      .then((res) => [
-        setQString(res.data.QString),
-        setAnswer(res.data.Answer),
-      ])
+      .get(`http://ips.syriantf.com/api/questions/${props.match.params.id}`)
+      .then((res) => [setQString(res.data.QString), setAnswer(res.data.Answer)])
       .catch((error) =>
         props.setAlert("There was a problem in fetching data", "danger")
       );

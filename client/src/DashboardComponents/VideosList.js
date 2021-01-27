@@ -19,7 +19,7 @@ const VideosList = ({ deletevideo }) => {
   useEffect(() => {
     const fetchPosts = async () => {
       setLoading(true);
-      const res = await axios.get("http://localhost:5000/api/videos");
+      const res = await axios.get("http://ips.syriantf.com/api/videos");
       setposts(res.data);
       setLoading(false);
     };

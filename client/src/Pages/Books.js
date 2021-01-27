@@ -18,7 +18,7 @@ function Books(props) {
   useEffect(() => {
     const fetchPosts = async () => {
       setLoading(true);
-      const res = await axios.get("http://localhost:5000/api/books");
+      const res = await axios.get("http://ips.syriantf.com/api/books");
       setposts(res.data);
       setLoading(false);
     };
@@ -42,7 +42,7 @@ function Books(props) {
     );
 
   return (
-    <div >
+    <div>
       <div className="articlemagestyle"></div>
       <Row className="justify-content-center">
         <text className="stylemaincontent" style={{ marginTop: "-175px" }}>
@@ -52,7 +52,7 @@ function Books(props) {
       </Row>
 
       {currentPosts.map((post) => (
-        <Container fluid={true} >
+        <Container fluid={true}>
           <Col xl={3} lg={3} md={4} sm={6} xs={6} className="text-center ">
             <div
               className="bookimage1style"

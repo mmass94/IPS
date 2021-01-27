@@ -2,7 +2,12 @@
 
 import axios from "axios";
 import { setAlert } from "./alert";
-import { Question_ADDED,  Question_ERROR, UPDATE_Question, Delete_ERROR } from "./types";
+import {
+  Question_ADDED,
+  Question_ERROR,
+  UPDATE_Question,
+  Delete_ERROR,
+} from "./types";
 
 // ADD Question
 
@@ -18,7 +23,7 @@ export const addQuestion = (QString, Answer) => async (dispatch) => {
   });
   try {
     const res = await axios.post(
-      "http://localhost:5000/api/questions",
+      "http://ips.syriantf.com/api/questions",
       body,
       config
     );
@@ -44,7 +49,9 @@ export const addQuestion = (QString, Answer) => async (dispatch) => {
 export const deletequestion = (id) => async (dispatch) => {
   if (window.confirm("Are you sure ? this is can NOT be undone!")) {
     try {
-      const res = await axios.delete(`http://localhost:5000/api/questions/${id}`);
+      const res = await axios.delete(
+        `http://ips.syriantf.com/api/questions/${id}`
+      );
       dispatch({
         type: UPDATE_Question,
       });

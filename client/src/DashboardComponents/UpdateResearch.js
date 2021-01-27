@@ -33,7 +33,7 @@ const UpdateResearch = (props) => {
 
     axios
       .put(
-        `http://localhost:5000/api/researches/${props.match.params.id}`,
+        `http://ips.syriantf.com/api/researches/${props.match.params.id}`,
         researches
       )
       .then((res) => props.setAlert("Research has been updated", "success"))
@@ -43,7 +43,7 @@ const UpdateResearch = (props) => {
   };
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/researches/${props.match.params.id}`)
+      .get(`http://ips.syriantf.com/api/researches/${props.match.params.id}`)
       .then((res) => [
         setResearchTitle(res.data.ResearchTitle),
         setResearchphoto(res.data.Researchphoto),

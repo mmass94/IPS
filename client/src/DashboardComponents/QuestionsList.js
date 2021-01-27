@@ -20,7 +20,7 @@ const QuestionsList = ({ deletequestion }) => {
   useEffect(() => {
     const fetchPosts = async () => {
       setLoading(true);
-      const res = await axios.get("http://localhost:5000/api/questions");
+      const res = await axios.get("http://ips.syriantf.com/api/questions");
       setposts(res.data);
       setLoading(false);
     };

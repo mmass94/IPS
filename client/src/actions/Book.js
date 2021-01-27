@@ -2,20 +2,15 @@
 
 import axios from "axios";
 import { setAlert } from "./alert";
-import {
-  Book_ADDED,
-  Book_ERROR,
-  UPDATE_Book,
-  Delete_ERROR,
-} from "./types";
+import { Book_ADDED, Book_ERROR, UPDATE_Book, Delete_ERROR } from "./types";
 
 // ADD Book
 
 export const addBook = (
-BookTitle,
-Bookhphoto,
-BookDescription,
-BookLink,
+  BookTitle,
+  Bookhphoto,
+  BookDescription,
+  BookLink
 ) => async (dispatch) => {
   const config = {
     headers: {
@@ -23,14 +18,14 @@ BookLink,
     },
   };
   const body = JSON.stringify({
-   BookTitle,
-      Bookhphoto,
-      BookDescription,
-      BookLink,
+    BookTitle,
+    Bookhphoto,
+    BookDescription,
+    BookLink,
   });
   try {
     const res = await axios.post(
-      "http://localhost:5000/api/books",
+      "http://ips.syriantf.com/api/books",
       body,
       config
     );
@@ -56,9 +51,7 @@ BookLink,
 export const deletebook = (id) => async (dispatch) => {
   if (window.confirm("Are you sure ? this is can NOT be undone!")) {
     try {
-      const res = await axios.delete(
-        `http://localhost:5000/api/books/${id}`
-      );
+      const res = await axios.delete(`http://ips.syriantf.com/api/books/${id}`);
       dispatch({
         type: UPDATE_Book,
       });

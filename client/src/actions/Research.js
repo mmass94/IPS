@@ -32,7 +32,7 @@ export const addResearch = (
   });
   try {
     const res = await axios.post(
-      "http://localhost:5000/api/researches",
+      "http://ips.syriantf.com/api/researches",
       body,
       config
     );
@@ -59,7 +59,7 @@ export const deleteresearch = (id) => async (dispatch) => {
   if (window.confirm("Are you sure ? this is can NOT be undone!")) {
     try {
       const res = await axios.delete(
-        `http://localhost:5000/api/researches/${id}`
+        `http://ips.syriantf.com/api/researches/${id}`
       );
       dispatch({
         type: UPDATE_Research,

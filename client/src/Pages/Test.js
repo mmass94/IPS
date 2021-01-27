@@ -8,7 +8,7 @@ const Test = (props) => {
   const [Articledetails, setArticledetails] = useState("");
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/articles/${props.match.params.id}`)
+      .get(`http://ips.syriantf.com/api/articles/${props.match.params.id}`)
       .then((res) => [setArticledetails(res.data.Articledetails)])
       .catch((error) => console.log(error));
   }, [props]);

@@ -18,7 +18,7 @@ export const addLink = (LinkString, LinkDiscription) => async (dispatch) => {
   });
   try {
     const res = await axios.post(
-      "http://localhost:5000/api/links",
+      "http://ips.syriantf.com/api/links",
       body,
       config
     );
@@ -44,7 +44,7 @@ export const addLink = (LinkString, LinkDiscription) => async (dispatch) => {
 export const deletelink = (id) => async (dispatch) => {
   if (window.confirm("Are you sure ? this is can NOT be undone!")) {
     try {
-      const res = await axios.delete(`http://localhost:5000/api/links/${id}`);
+      const res = await axios.delete(`http://ips.syriantf.com/api/links/${id}`);
       dispatch({
         type: UPDATE_Link,
       });

@@ -26,7 +26,7 @@ const Research = (props) => {
 
     axios
       .put(
-        `http://localhost:5000/api/researches/${props.match.params.id}`,
+        `http://ips.syriantf.com/api/researches/${props.match.params.id}`,
         researches
       )
       .then((res) => props.setAlert("Research has been updated", "success"))
@@ -38,7 +38,7 @@ const Research = (props) => {
     setLoading(true);
 
     axios
-      .get(`http://localhost:5000/api/researches/${props.match.params.id}`)
+      .get(`http://ips.syriantf.com/api/researches/${props.match.params.id}`)
       .then(
         (res) => [
           setResearchTitle(res.data.ResearchTitle),

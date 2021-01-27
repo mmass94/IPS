@@ -26,7 +26,7 @@ const Article = (props) => {
 
     axios
       .put(
-        `http://localhost:5000/api/articles/${props.match.params.id}`,
+        `http://ips.syriantf.com/api/articles/${props.match.params.id}`,
         articles
       )
       .then((res) => props.setAlert("Article has been updated", "success"))
@@ -38,7 +38,7 @@ const Article = (props) => {
     setLoading(true);
 
     axios
-      .get(`http://localhost:5000/api/articles/${props.match.params.id}`)
+      .get(`http://ips.syriantf.com/api/articles/${props.match.params.id}`)
       .then(
         (res) => [
           setArticledetails(res.data.Articledetails),

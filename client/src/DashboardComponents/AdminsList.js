@@ -22,7 +22,7 @@ const AdminList = ({ auth: { isAuthenticated }, deleteadmin }) => {
   useEffect(() => {
     const fetchPosts = async () => {
       setLoading(true);
-      const res = await axios.get("http://localhost:5000/api/admins");
+      const res = await axios.get("http://ips.syriantf.com/api/admins");
       setposts(res.data);
       setLoading(false);
     };

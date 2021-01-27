@@ -20,7 +20,7 @@ const BooksList = ({ deletebook }) => {
   useEffect(() => {
     const fetchPosts = async () => {
       setLoading(true);
-      const res = await axios.get("http://localhost:5000/api/books");
+      const res = await axios.get("http://ips.syriantf.com/api/books");
       setposts(res.data);
       setLoading(false);
     };

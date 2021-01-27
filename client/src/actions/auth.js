@@ -11,7 +11,7 @@ import {
   LOGOUT,
   Delete_ERROR,
   ADMIN_DELETE,
-  ADMIN_UPDATE
+  ADMIN_UPDATE,
 } from "./types";
 
 import setAuthToken from "../utills/setAuthToken";
@@ -23,7 +23,7 @@ export const laodUser = () => async (dispatch) => {
   }
 
   try {
-    const res = await axios.get("http://localhost:5000/api/auth");
+    const res = await axios.get("http://ips.syriantf.com/api/auth");
     dispatch({
       type: USER_LOADED,
       payload: res.data,
@@ -47,7 +47,7 @@ export const register = (FullName, Username, Password) => async (dispatch) => {
   const body = JSON.stringify({ FullName, Username, Password });
   try {
     const res = await axios.post(
-      "http://localhost:5000/api/Admins",
+      "http://ips.syriantf.com/api/Admins",
       body,
       config
     );
@@ -67,7 +67,6 @@ export const register = (FullName, Username, Password) => async (dispatch) => {
     }
     dispatch({
       type: REGISTER_FAIL,
-
     });
   }
 };
@@ -83,7 +82,7 @@ export const login = (Username, Password) => async (dispatch) => {
   const body = JSON.stringify({ Username, Password });
   try {
     const res = await axios.post(
-      "http://localhost:5000/api/auth",
+      "http://ips.syriantf.com/api/auth",
       body,
       config
     );
@@ -112,36 +111,33 @@ export const logout = () => (dispatch) => {
   dispatch({ type: LOGOUT });
 };
 
-
-
 //Delete an admin
-export const deleteadmin = id => async dispatch => {
-  if (window.confirm('Are you sure ? this is can NOT be undone!')) {
-
+export const deleteadmin = (id) => async (dispatch) => {
+  if (window.confirm("Are you sure ? this is can NOT be undone!")) {
     try {
-      const res = await axios.delete(`http://localhost:5000/api/admins/${id}`);
+      const res = await axios.delete(
+        `http://ips.syriantf.com/api/admins/${id}`
+      );
       dispatch({
         type: ADMIN_DELETE,
         payload: res.data,
-
       });
 
       dispatch(setAlert("Admin Deleted", "success"));
-
     } catch (err) {
       dispatch({
         type: Delete_ERROR,
         payload: { msg: err.response.statusText, status: err.response.status },
-
       });
     }
   }
-
-}
+};
 
 //update an admin
-export const updateadmin = (FullName, Username, Password) => async (dispatch) => {
- const config = {
+export const updateadmin = (FullName, Username, Password) => async (
+  dispatch
+) => {
+  const config = {
     headers: {
       "Content-Type": "application/json",
     },
@@ -149,20 +145,14 @@ export const updateadmin = (FullName, Username, Password) => async (dispatch) =>
   const body = JSON.stringify({ FullName, Username, Password });
   try {
     const res = await axios.post(
-      "http://localhost:5000/api/Admins",
+      "http://ips.syriantf.com/api/Admins",
       body,
       config
     );
-    } catch (err) {
-
+  } catch (err) {
     dispatch({
       type: ADMIN_UPDATE,
-      
     });
     dispatch(setAlert("User Added", "success"));
-
-
-
-  
   }
-}
+};

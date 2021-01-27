@@ -31,7 +31,7 @@ export const addVideo = (
   });
   try {
     const res = await axios.post(
-      "http://localhost:5000/api/Videos",
+      "http://ips.syriantf.com/api/Videos",
       body,
       config
     );
@@ -57,7 +57,9 @@ export const addVideo = (
 export const deletevideo = (id) => async (dispatch) => {
   if (window.confirm("Are you sure ? this is can NOT be undone!")) {
     try {
-      const res = await axios.delete(`http://localhost:5000/api/videos/${id}`);
+      const res = await axios.delete(
+        `http://ips.syriantf.com/api/videos/${id}`
+      );
       dispatch({
         type: UPDATE_VIDEO,
       });
@@ -74,7 +76,7 @@ export const deletevideo = (id) => async (dispatch) => {
 // Update VIDEO
 export const updateVideo = (id) => async (dispatch) => {
   try {
-    const res = await axios.put(`http://localhost:5000/api/videos/${id}`);
+    const res = await axios.put(`http://ips.syriantf.com/api/videos/${id}`);
     dispatch({
       type: UPDATE_VIDEO,
     });

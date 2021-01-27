@@ -32,10 +32,7 @@ const UpdateBook = (props) => {
     setBookLink("");
 
     axios
-      .put(
-        `http://localhost:5000/api/books/${props.match.params.id}`,
-        books
-      )
+      .put(`http://ips.syriantf.com/api/books/${props.match.params.id}`, books)
       .then((res) => props.setAlert("book has been updated", "success"))
       .catch((err) => {
         props.setAlert("Book has not been updated", "danger");
@@ -43,7 +40,7 @@ const UpdateBook = (props) => {
   };
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/books/${props.match.params.id}`)
+      .get(`http://ips.syriantf.com/api/books/${props.match.params.id}`)
       .then((res) => [
         setBookTitle(res.data.BookTitle),
         setBookphoto(res.data.Bookhphoto),

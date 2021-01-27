@@ -20,7 +20,7 @@ const LinksList = ({ deletelink }) => {
   useEffect(() => {
     const fetchPosts = async () => {
       setLoading(true);
-      const res = await axios.get("http://localhost:5000/api/links");
+      const res = await axios.get("http://ips.syriantf.com/api/links");
       setposts(res.data);
       setLoading(false);
     };

@@ -26,7 +26,7 @@ const UpdateLink = (props) => {
     setLinkDiscription("");
 
     axios
-      .put(`http://localhost:5000/api/links/${props.match.params.id}`, links)
+      .put(`http://ips.syriantf.com/api/links/${props.match.params.id}`, links)
       .then((res) => props.setAlert("Link has been updated", "success"))
       .catch((err) => {
         props.setAlert("Link has not been updated", "danger");
@@ -34,7 +34,7 @@ const UpdateLink = (props) => {
   };
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/links/${props.match.params.id}`)
+      .get(`http://ips.syriantf.com/api/links/${props.match.params.id}`)
       .then((res) => [
         setLinkString(res.data.LinkString),
         setLinkDiscription(res.data.LinkDiscription),

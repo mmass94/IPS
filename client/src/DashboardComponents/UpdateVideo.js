@@ -39,7 +39,10 @@ const UpdateVideo = (props) => {
     setVideoSummary("");
 
     axios
-      .put(`http://localhost:5000/api/Videos/${props.match.params.id}`, videos)
+      .put(
+        `http://ips.syriantf.com/api/Videos/${props.match.params.id}`,
+        videos
+      )
       .then((res) => props.setAlert("Video has been updated", "success"))
       .catch((err) => {
         console.log(err);
@@ -47,7 +50,7 @@ const UpdateVideo = (props) => {
   };
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/Videos/${props.match.params.id}`)
+      .get(`http://ips.syriantf.com/api/Videos/${props.match.params.id}`)
       .then((res) => [
         setVideoLink(res.data.VideoLink),
         setVideoTitle(res.data.VideoTitle),

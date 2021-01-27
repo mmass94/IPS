@@ -36,7 +36,7 @@ export const addArticle = (
   });
   try {
     const res = await axios.post(
-      "http://localhost:5000/api/Articles",
+      "http://ips.syriantf.com/api/Articles",
       body,
       config
     );
@@ -63,7 +63,7 @@ export const deletearticle = (id) => async (dispatch) => {
   if (window.confirm("Are you sure ? this is can NOT be undone!")) {
     try {
       const res = await axios.delete(
-        `http://localhost:5000/api/articles/${id}`
+        `http://ips.syriantf.com/api/articles/${id}`
       );
       dispatch({
         type: UPDATE_ARTICLE,
